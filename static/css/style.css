@@ -38,22 +38,47 @@ body {
 }
 
 .book-card {
-    background: #fdfdfd;
-    border: 1px solid #ccc;
+    background: #fdfdfd;              
+    border: 1px solid #ccc;            
     padding: 20px;
     border-radius: 8px;
-    display: flex;               
-    gap: 20px; 
+    display: flex;                     
+    gap: 20px;                         
+    transition: 0.2s ease;              
+}
 
+.book-card:hover {
+    transform: translateY(-3px);       
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .book-cover {
     width: 140px;         
     height: auto;
     border-radius: 4px;
-    margin-right: 20px;
 }
 
 .book-info {
     flex: 1;                    
+}
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.filter-bar input[type="text"] {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    min-width: 220px;
+}
+
+.filter-bar select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }

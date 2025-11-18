@@ -11,14 +11,21 @@
     </nav>
 
     <div class="main-container">
-
-        <form method="get" class="sort-form">
+        <form method="get" class="filter-bar">
+            <label for="q">Search:</label>
+            <input 
+                type="text" 
+                id="q" 
+                name="q" 
+                placeholder="Title, author, or genre"
+                value="{{ search_query }}"
+            >
             <label for="sort">Sort by:</label>
             <select name="sort" id="sort" onchange="this.form.submit()">
-                <option value="">None</option>
-                <option value="title">Title</option>
-                <option value="price">Price</option>
-                <option value="author">Author</option>
+                <option value="" {% if not sort_by %}selected{% endif %}>None</option>
+                <option value="title" {% if sort_by == 'title' %}selected{% endif %}>Title</option>
+                <option value="price" {% if sort_by == 'price' %}selected{% endif %}>Price</option>
+                <option value="author" {% if sort_by == 'author' %}selected{% endif %}>Author</option>
             </select>
         </form>
 
