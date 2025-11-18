@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Browser</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-title">Book Catalog</div>
+    </nav>
+
+    <div class="main-container">
+
+        <form method="get" class="sort-form">
+            <label for="sort">Sort by:</label>
+            <select name="sort" id="sort" onchange="this.form.submit()">
+                <option value="">None</option>
+                <option value="title">Title</option>
+                <option value="price">Price</option>
+                <option value="author">Author</option>
+            </select>
+        </form>
+
+        <div class="book-list">
+            {% for book in books %}
+                <div class="book-card">
+                    
+                    <img class="book-cover"
+                        src="{{ url_for('static', filename='images/' ~ book.image) }}"
+                        alt="{{ book.title }}">
+
+                    <div class="book-info">
+                        <h2>{{ book.title }}</h2>
+                        <p><strong>Author:</strong> {{ book.author }}</p>
+                        <p><strong>Genre:</strong> {{ book.genre }}</p>
+                        <p><strong>Price:</strong> ${{ book.price }}</p>
+                        <p>{{ book.description }}</p>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</body>
+</html>

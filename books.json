@@ -1,0 +1,26 @@
+[
+    {
+        "title": "The Hunger Games",
+        "author": "Suzanne Collins",
+        "genre": "Dystopian",
+        "price": 12.50,
+        "image": "hunger-games.jpg",
+        "description": "A dystopian novel where Katniss Everdeen volunteers to take her sister's place in a brutal televised fight to the death, sparking rebellion in a society ruled by an oppressive Capitol."
+    },
+    {
+        "title": "Flowers for Algernon",
+        "author": "Daniel Keyes",
+        "genre": "Science Fiction",
+        "price": 9.99,
+        "image": "flowers-for-algernon.jpg",
+        "description": "A psychological science fiction novel following Charlie Gordon, a man with an intellectual disability who undergoes an experimental procedure to increase his intelligence, leading to profound emotional and ethical consequences."
+    },
+    {
+        "title": "Dune",
+        "author": "Frank Herbert",
+        "genre": "Science Fiction",
+        "price": 15.00,
+        "image": "dune.jpg",
+        "description": "A science fiction epic set on the desert planet Arrakis."
+    }
+]
