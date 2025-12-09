@@ -34,7 +34,7 @@
                 <div class="book-card">
                     
                     <img class="book-cover"
-                        src="{{ url_for('static', filename='images/' ~ book.image) }}"
+                        src="{{ book.image_url }}"
                         alt="{{ book.title }}">
 
                     <div class="book-info">

@@ -1,10 +1,19 @@
 from flask import Flask, render_template, request
 import json
+from config import S3_BASE_URL
+
 
 app = Flask(__name__)
 
 with open("books.json", "r") as f:
     books = json.load(f)
+
+def add_image_urls(books_list):
+    for book in books_list:
+        book["image_url"] = S3_BASE_URL + book["image_key"]
+    return books_list
+
+books = add_image_urls(books)
 
 @app.route("/")
 def home():
