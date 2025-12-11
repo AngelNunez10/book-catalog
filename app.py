@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request
+from config import S3_BASE_URL
+
 from decimal import Decimal
 import boto3
 
@@ -39,6 +41,13 @@ def get_books_from_dynamodb():
         adapted.append(book)
 
     return adapted
+
+def add_image_urls(books_list):
+    for book in books_list:
+        book["image_url"] = S3_BASE_URL + book["image_key"]
+    return books_list
+
+books = add_image_urls(books)
 
 @app.route("/")
 def home():
