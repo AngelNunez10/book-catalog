@@ -34,20 +34,14 @@ def get_books_from_dynamodb():
         if "name" in book and "title" not in book:
             book["title"] = book["name"]
 
-        if "imageKey" in book and "image" not in book:
-            key = book["imageKey"]
-            book["image"] = key.split("/")[-1]
+        if "imageKey" in book:
+            book["image_url"] = S3_BASE_URL.rstrip("/") + "/" + book["imageKey"]
 
         adapted.append(book)
 
     return adapted
 
-def add_image_urls(books_list):
-    for book in books_list:
-        book["image_url"] = S3_BASE_URL + book["image_key"]
-    return books_list
 
-books = add_image_urls(books)
 
 @app.route("/")
 def home():

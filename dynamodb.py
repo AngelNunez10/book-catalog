@@ -12,7 +12,7 @@ books = [
         "genre": "Science Fiction",
         "description": "A science fiction epic set on the desert planet Arrakis.",
         "price": Decimal("15.0"),
-        "imageKey": "images/dune.jpg",
+        "imageKey": "dune.jpg",
         "tags": ["science-fiction", "classic", "bestseller"],
     },
     {
