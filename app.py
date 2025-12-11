@@ -31,6 +31,11 @@ def get_books_from_dynamodb():
 
         if "name" in book and "title" not in book:
             book["title"] = book["name"]
+
+        if "imageKey" in book and "image" not in book:
+            key = book["imageKey"]
+            book["image"] = key.split("/")[-1]
+
         adapted.append(book)
 
     return adapted

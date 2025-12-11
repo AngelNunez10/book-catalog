@@ -32,7 +32,7 @@ books = [
         "genre": "Dystopian",
         "description": "A dystopian novel where Katniss Everdeen volunteers to take her sister's place in a deadly televised competition.",
         "price": Decimal("12.50"),
-        "imageKey": "images/the-hunger-games.jpg",
+        "imageKey": "images/hunger-games.jpg",
         "tags": ["dystopian", "young-adult", "bestseller"],
     },
     {
